@@ -1,59 +1,133 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 Laravel 12 + Filament v4 Starter Kit
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Starter Kit Admin Panel** modern, aman, dan siap pakai. Dibangun di atas fondasi **Laravel 12** dan **Filament v4** (Bleeding Edge) dengan integrasi **Tailwind CSS v4**.
 
-## About Laravel
+Cocok untuk memulai proyek aplikasi back-office, SAAS, atau sistem manajemen internal dengan fitur keamanan dan UI/UX yang sudah matang.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-----
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Fitur Unggulan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🛡️ Keamanan & RBAC (Role-Based Access Control)
 
-## Learning Laravel
+  - Terintegrasi dengan **`spatie/laravel-permission`**.
+  - **3 Role Default:** Super Admin, Sub Admin, dan User.
+  - **Policy & Gate:** Menu sensitif (seperti Permission & Audit Log) otomatis disembunyikan dari user biasa.
+  - **Super Admin Gate:** Super Admin otomatis memiliki akses penuh tanpa perlu assign permission manual.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 👁️ Audit Logging (CCTV Aplikasi)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+  - Terintegrasi dengan **`spatie/laravel-activitylog`**.
+  - Mencatat **Siapa**, **Kapan**, dan **Apa** yang diubah pada data penting (User, Role, dll).
+  - Menu "Activities" bersifat **Read-Only** dan hanya bisa diakses oleh Super Admin.
 
-## Laravel Sponsors
+### 🎨 UI/UX Personal & Modern
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+  - **Custom Theme:** Menggunakan font **Poppins** (Google Fonts) dan warna tema **Indigo**.
+  - **Logo Kustom:** Support logo SVG untuk mode Terang & Gelap.
+  - **Custom Login:** Halaman login yang sudah disesuaikan (bukan default Filament).
+  - **Dashboard Dinamis:**
+      - **Admin:** Melihat Widget Statistik (Total User, Roles, dll).
+      - **User:** Melihat Widget Sapaan (Welcome Banner) dengan Avatar.
 
-### Premium Partners
+### ⚡ Fitur Produktivitas
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+  - **Global Search:** Cari User instan dengan tekan **`Ctrl + K`**.
+  - **Sidebar Grouping:** Menu dikelompokkan rapi dalam folder "Settings".
+  - **Custom Profile:** Edit nama, email, password, dan **Upload Avatar** (dengan perbaikan bug *silent crash*).
 
-## Contributing
+-----
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🛠️ Persyaratan Sistem
 
-## Code of Conduct
+  - PHP 8.2 atau lebih baru
+  - Composer
+  - Node.js & NPM
+  - Database (MySQL / MariaDB / PostgreSQL)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+-----
 
-## Security Vulnerabilities
+## 📦 Panduan Instalasi Cepat
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1.  **Clone Repositori**
 
-## License
+    ```bash
+    git clone https://github.com/username-anda/starter-kit.git
+    cd starter-kit
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2.  **Install Dependensi**
+
+    ```bash
+    composer install
+    npm install
+    ```
+
+3.  **Konfigurasi Environment**
+    Salin file `.env.example` dan atur koneksi database Anda.
+
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+
+    *Pastikan mengatur `DB_DATABASE`, `DB_USERNAME`, dan `DB_PASSWORD` di file `.env`.*
+
+4.  **Setup Database & Seeding (PENTING)**
+    Perintah ini akan membuat tabel dan mengisi data Role, Permission, dan User default.
+
+    ```bash
+    php artisan migrate:fresh --seed
+    ```
+
+5.  **Link Storage (Untuk Avatar)**
+
+    ```bash
+    php artisan storage:link
+    ```
+
+6.  **Build Assets (Tailwind & Font)**
+
+    ```bash
+    npm run build
+    ```
+
+7.  **Jalankan Server**
+
+    ```bash
+    php artisan serve
+    ```
+
+    Akses aplikasi di: `http://127.0.0.1:8000/admin`
+
+-----
+
+## 🔐 Akun Default (Login Credentials)
+
+Gunakan akun berikut untuk menguji pembagian hak akses (RBAC):
+
+| Role | Email | Password | Hak Akses |
+| :--- | :--- | :--- | :--- |
+| **Super Admin** | `admin@admin.com` | `admin123` | **Full Akses**. Bisa melihat Audit Log, Permissions, dan Widget Statistik. |
+| **Sub Admin** | `test@example.com` | `password123` | Bisa mengelola User & Role. **Tidak bisa** melihat Audit Log. |
+| **User** | `admin@gmail.com` | `password123` | **Akses Terbatas**. Hanya Dashboard Personal & Edit Profil. |
+
+-----
+
+## 🧩 Struktur Kustomisasi
+
+Jika Anda ingin mengubah identitas aplikasi:
+
+  - **Nama & Warna:** Edit file `app/Providers/Filament/AdminPanelProvider.php`.
+  - **Logo:** Ganti file SVG di folder `public/images/`.
+      - `logo-light.svg` (Untuk mode terang)
+      - `logo-dark.svg` (Untuk mode gelap)
+      - `favicon.svg`
+  - **User Widget:** Edit file `resources/views/filament/widgets/user-welcome-widget.blade.php`.
+  - **Zona Waktu:** Diatur ke `Asia/Jakarta` pada file `.env`.
+
+-----
+
+## 📝 Lisensi
+
+Starter Kit ini open-sourced software di bawah lisensi [MIT license](https://opensource.org/licenses/MIT).
