@@ -1,0 +1,15 @@
+/* 1. Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* 2. Import CSS Bawaan Filament */
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+/* 3. Konfigurasi Source (File yang discan oleh Tailwind) */
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+/* 4. Konfigurasi Tema (Override Font) */
+@theme {
+    /* Menimpa variabel font default 'sans' menjadi Poppins */
+    --font-sans: 'Poppins', sans-serif;
+}
